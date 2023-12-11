@@ -10,7 +10,7 @@ public class OradorMain {
 		
 		System.out.println(nuevoOrador);
 
-		Orador nuevoFromDB = new Orador (1L,"Paula","Soria","paula@mailcito.com","codoacodo", LocalDate.now());
+		//Orador nuevoFromDB = new Orador (1L,"Paula","Soria","paula@mailcito.com","codoacodo", LocalDate.now());
 		
 		nuevoOrador.setNombre("Pipo");
 			
