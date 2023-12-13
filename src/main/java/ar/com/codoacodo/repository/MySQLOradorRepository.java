@@ -24,6 +24,12 @@ public class MySQLOradorRepository implements OradorRepository {
 			statement.setDate(5, new java.sql.Date(System.currentTimeMillis()));
 			
 			statement.executeUpdate();
+			
+			ResultSet res = statement.getGeneratedKeys();
+			if(res.next()) {
+				Long id =res.getLong(1);
+			    orador.setId(id);
+			}
 		}catch (Exception e) {
 			throw new IllegalArgumentException("No se pudo crear el orador",e);
 		}
@@ -65,8 +71,8 @@ public class MySQLOradorRepository implements OradorRepository {
 
 	@Override
 	public void update(Orador orador) {
-		String sql = "update oradoor"
-				+"set nombre=?, apellido=?, tema=?, mail=?"
+		String sql = "update orador"
+				+"set nombre=?, apellido=?, mail=?, tema=?"
 				+"where id = ?";
 		
 		
@@ -75,8 +81,8 @@ public class MySQLOradorRepository implements OradorRepository {
 			
 			statement.setString(1, orador.getNombre());
 			statement.setString(2, orador.getApellido());
-			statement.setString(3, orador.getTema());
-			statement.setString(4, orador.getMail());
+			statement.setString(3, orador.getMail());
+			statement.setString(4, orador.getTema());
 			statement.setLong(5, orador.getId());
 			
 			
