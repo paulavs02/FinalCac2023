@@ -12,7 +12,7 @@ public class AdministradorDeConexiones {
 		String password ="lgmg185d";
 		String port = "3306";
 		String dbName = "db-23545";
-		String dbUrl ="jdbc:mysql://"+host+":"+port+"/"+dbName+"?serverTimeZone=UTC&useSSL=false";
+		String dbUrl ="jdbc:mysql://"+host+":"+port+"/"+dbName+"?allawPublicKeyRetrieval=true&serverTimeZone=UTC&useSSL=false";
 		
 		String driver ="com.mysql.cj.jdbc.Driver";
 				
